@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Networking.gd" type="Script" id=1]
+
+[node name="Networking" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Timer_top" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer_bottom" type="Timer" parent="."]
+wait_time = 2.0
+[connection signal="timeout" from="Timer_top" to="." method="_on_Timer_top_timeout"]
+[connection signal="timeout" from="Timer_bottom" to="." method="_on_Timer_bottom_timeout"]
